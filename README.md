@@ -1,21 +1,28 @@
-# prismarine-chunk
+# Prismarine Chunk 26.2
 
-[![NPM version](https://img.shields.io/npm/v/prismarine-chunk.svg)](http://npmjs.com/package/prismarine-chunk)
-[![Build Status](https://github.com/PrismarineJS/prismarine-chunk/workflows/CI/badge.svg)](https://github.com/PrismarineJS/prismarine-chunk/actions?query=workflow%3A%22CI%22)
-[![Discord](https://img.shields.io/badge/chat-on%20discord-brightgreen.svg)](https://discord.gg/GsEFRM8)
-[![Gitter](https://img.shields.io/badge/chat-on%20gitter-brightgreen.svg)](https://gitter.im/PrismarineJS/general)
-[![Irc](https://img.shields.io/badge/chat-on%20irc-brightgreen.svg)](https://irc.gitter.im/)
+Independent Complexity-ML distribution of the Prismarine chunk codec with
+Minecraft Java 26.2 support for GAME LAB.
 
-[![Try it on gitpod](https://img.shields.io/badge/try-on%20gitpod-brightgreen.svg)](https://gitpod.io/#https://github.com/PrismarineJS/prismarine-chunk)
+| Package | Minecraft Java | Release |
+| --- | --- | --- |
+| `prismarine-chunk@1.40.0+complexity.26.2.0` | 26.2 | [`complexity-26.2.0`](https://github.com/Complexity-ML/prismarine-chunk-26.2/releases/tag/complexity-26.2.0) |
 
-A class to hold chunk data for Minecraft: PC 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15 and 1.16 and Bedrock Edition 0.14 and 1.0, 1.16, 1.17, 1.18, 1.19 and 1.20
+Minecraft 26.2 adds a fluid-state count to every chunk section. This
+distribution reads and writes that field while preserving the historical Java
+and Bedrock codecs inherited from upstream.
+
+## Installation
+
+```bash
+npm install "https://github.com/Complexity-ML/prismarine-chunk-26.2/releases/download/complexity-26.2.0/prismarine-chunk-complexity-26.2.0.tgz"
+```
 
 ## Usage
 
 ```js
-const registry = require('prismarine-registry')('1.8')
+const registry = require('prismarine-registry')('26.2')
 const ChunkColumn = require('prismarine-chunk')(registry)
-const { Vec3 } = require("vec3")
+const { Vec3 } = require('vec3')
 
 const chunk = new ChunkColumn()
 
@@ -205,7 +212,7 @@ Load biomes into the chunk (starting from 1.15)
 
 ### bedrock
 
-See [index.d.ts](https://github.com/PrismarineJS/prismarine-chunk/blob/master/types/index.d.ts#L56)
+See [index.d.ts](https://github.com/Complexity-ML/prismarine-chunk-26.2/blob/main/types/index.d.ts)
 
 ## ChunkSection
 
@@ -234,7 +241,7 @@ See [index.d.ts](https://github.com/PrismarineJS/prismarine-chunk/blob/master/ty
 
 ### bedrock
 
-See [index.d.ts](https://github.com/PrismarineJS/prismarine-chunk/blob/master/types/index.d.ts#L56)
+See [index.d.ts](https://github.com/Complexity-ML/prismarine-chunk-26.2/blob/main/types/index.d.ts)
 
 #### compact()
 Shrinks the size of the SubChunk if possible after setBlock operations are done
@@ -242,3 +249,23 @@ Shrinks the size of the SubChunk if possible after setBlock operations are done
 #### getPalette()
 
 Returns a list of unique block states that make up the chunk section
+
+## Validation
+
+The complete codec suite passes 309 tests. A dedicated 26.2 regression test
+verifies the extra fluid-count field, and the GAME LAB live test loaded 473
+chunks from an official Minecraft Java 26.2 server.
+
+## Maintenance
+
+Open Minecraft 26.2 and GAME LAB issues or pull requests in this repository.
+
+## Credits and license
+
+Derived from
+[PrismarineJS prismarine-chunk](https://github.com/PrismarineJS/prismarine-chunk).
+The upstream history and contributor attribution are retained. Complexity-ML
+maintains this 26.2 distribution independently and is not affiliated with
+Mojang or Microsoft.
+
+Licensed under the [MIT License](LICENSE).
