@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/Complexity-ML/prismarine-chunk-26.2",
   "devDependencies": {
-    "@types/node": "^24.1.0",
+    "@types/node": "^26.1.2",
     "expect": "^30.0.5",
     "mocha": "^11.0.1",
     "prismarine-chunk": "file:.",
