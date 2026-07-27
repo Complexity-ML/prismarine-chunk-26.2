@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/PrismarineJS/prismarine-chunk.git"
+    "url": "https://github.com/Complexity-ML/prismarine-chunk-26.2.git"
   },
   "keywords": [
     "minecraft",
@@ -31,9 +31,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PrismarineJS/prismarine-chunk/issues"
+    "url": "https://github.com/Complexity-ML/prismarine-chunk-26.2/issues"
   },
-  "homepage": "https://github.com/PrismarineJS/prismarine-chunk",
+  "homepage": "https://github.com/Complexity-ML/prismarine-chunk-26.2",
   "devDependencies": {
     "@types/node": "^24.1.0",
     "expect": "^30.0.5",
